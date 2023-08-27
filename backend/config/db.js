@@ -9,12 +9,12 @@ const connectDB = async () => {
       useFindAndModify: true,
     });
 
-    console.log(`MongoDB Connected: ${conn.connection.host}`.cyan.underline);
+    console.log(`MongoDB Connected`.yellow.bold);
   } catch (error) {
-    console.log(`Error: ${error.message}`.red.bold);
+    console.log(`Error:`);
     process.exit();
   }
-};
+};  
 
 module.exports = connectDB;
 

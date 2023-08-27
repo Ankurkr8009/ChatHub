@@ -14,15 +14,13 @@ const app = express();
 
 app.use(express.json()); // to accept json data
 
-// app.get("/", (req, res) => {
-//   res.send("API Running!");
-// });
+
 
 app.use("/api/user", userRoutes);
 app.use("/api/chat", chatRoutes);
 app.use("/api/message", messageRoutes);
 
-// --------------------------deployment------------------------------
+
 
 const __dirname1 = path.resolve();
 
@@ -38,7 +36,7 @@ if (a=== "production") {
   });
 }
 
-// --------------------------deployment------------------------------
+
 
 // Error Handling middlewares
 app.use(notFound);
@@ -48,7 +46,7 @@ const PORT = 5000;
 
 const server = app.listen(
   PORT,
-  console.log(`Server running on PORT ${PORT}...`.yellow.bold)
+  console.log(`Server running on PORT ${PORT}`.yellow.bold)
 );
 
 const io = require("socket.io")(server, {
@@ -64,10 +62,10 @@ io.on("connection", (socket) => {
   socket.on("setup", (userData) => {
     socket.join(userData._id);
     socket.emit("connected");
-  });
+  });  
 
   socket.on("join chat", (room) => {
-    socket.join(room);
+    socket.join(room); 
     console.log("User Joined Room: " + room);
   });
   socket.on("typing", (room) => socket.in(room).emit("typing"));
