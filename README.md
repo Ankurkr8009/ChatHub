@@ -13,6 +13,7 @@ ChatHub is a full-stack chatting application that enables real-time communicatio
 - **Authentication:**
   - User registration, login, and logout functionality.
   - JWT authorization for secure interactions.
+  - Uploading and Storing Profile Pictures in Cloudinary
 
 - **Real-Time Communication:**
   - Utilizes Socket.io for seamless real-time chatting.
@@ -30,6 +31,6 @@ ChatHub is a full-stack chatting application that enables real-time communicatio
   - Add or remove users from group conversations.
 
 - **Notifications:**
-  - Keeps users informed with notifications.
+  - Notification Indicator for Displaying New Messages
 
 
